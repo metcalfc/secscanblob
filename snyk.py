@@ -39,4 +39,5 @@ for vuln in data["vulnerabilities"]:
         ref.title = reference["title"]
         ref.url = reference["url"]
 
-pprint(scan)
+with open("./snyk-docker.json", "w") as out:
+    out.write(MessageToJson(scan, sort_keys=True))

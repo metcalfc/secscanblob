@@ -39,7 +39,6 @@ for layer in layers:
             if "Description" in vuln:
                 v.description = vuln["Description"]
             if "Title" in vuln:
-                pprint(vuln)
                 v.summary = vuln["Title"]
             v.version = vuln["InstalledVersion"]
             v.severity = Severity.Value(vuln["Severity"])
@@ -49,4 +48,5 @@ for layer in layers:
                     r.url = ref
             v.identifiers["CVE"] = vuln["VulnerabilityID"]
 
-# pprint(scan)
+with open("./trivy-docker.json", "w") as out:
+    out.write(MessageToJson(scan, sort_keys=True))

@@ -1,0 +1,2146 @@
+{
+  "backend": "TRIVY",
+  "created": "2020-04-15T05:05:49.642187Z",
+  "layerResults": [
+    {
+      "sha256": "sha256:f15005b0235fa8bd31cc6988c4f2758016fe412d696e81aecf73e52be079f19e",
+      "vulnerabilities": [
+        {
+          "description": "It was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.",
+          "identifiers": {
+            "CVE": "CVE-2011-3374"
+          },
+          "name": "apt",
+          "references": [
+            {
+              "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+            },
+            {
+              "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+            },
+            {
+              "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+            },
+            {
+              "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+            },
+            {
+              "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+            }
+          ],
+          "severity": "MEDIUM",
+          "version": "1.8.2"
+        },
+        {
+          "description": "An issue was discovered in disable_priv_mode in shell.c in GNU Bash through 5.0 patch 11. By default, if Bash is run with its effective UID not equal to its real UID, it will drop privileges by setting its effective UID to its real UID. However, it does so incorrectly. On Linux and other systems that support \"saved UID\" functionality, the saved UID is not dropped. An attacker with command execution in the shell can use \"enable -f\" for runtime loading of a new builtin, which can be a shared object that calls setuid() and therefore regains privileges. However, binaries running with an effective UID of 0 are unaffected.",
+          "identifiers": {
+            "CVE": "CVE-2019-18276"
+          },
+          "name": "bash",
+          "references": [
+            {
+              "url": "http://packetstormsecurity.com/files/155498/Bash-5.0-Patch-11-Privilege-Escalation.html"
+            },
+            {
+              "url": "https://github.com/bminor/bash/commit/951bdaad7a18cc0dc1036bba86b18b90874d39ff"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=-wGtxJ8opa8"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "bash: when effective UID is not equal to its real UID the saved UID is not dropped",
+          "version": "5.0-4"
+        },
+        {
+          "identifiers": {
+            "CVE": "TEMP-0841856-B18BAF"
+          },
+          "name": "bash",
+          "severity": "LOW",
+          "version": "5.0-4"
+        },
+        {
+          "description": "chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
+          "identifiers": {
+            "CVE": "CVE-2016-2781"
+          },
+          "name": "coreutils",
+          "references": [
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2016/02/28/2"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2016/02/28/3"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "coreutils: Non-privileged session can escape to the parent session in chroot",
+          "version": "8.30-3"
+        },
+        {
+          "description": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition.",
+          "identifiers": {
+            "CVE": "CVE-2017-18018"
+          },
+          "name": "coreutils",
+          "references": [
+            {
+              "url": "http://lists.gnu.org/archive/html/coreutils/2017-12/msg00045.html"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "coreutils: race condition vulnerability in chown and chgrp",
+          "version": "8.30-3"
+        },
+        {
+          "description": "stack_protect_prologue in cfgexpand.c and stack_protect_epilogue in function.c in GNU Compiler Collection (GCC) 4.1 through 8 (under certain circumstances) generate instruction sequences when targeting ARM targets that spill the address of the stack protector guard, which allows an attacker to bypass the protection of -fstack-protector, -fstack-protector-all, -fstack-protector-strong, and -fstack-protector-explicit against stack overflow by controlling what the stack canary is compared against.",
+          "identifiers": {
+            "CVE": "CVE-2018-12886"
+          },
+          "name": "gcc-8-base",
+          "references": [
+            {
+              "url": "https://gcc.gnu.org/viewcvs/gcc/trunk/gcc/config/arm/arm-protos.h?revision=266379&view=markup"
+            },
+            {
+              "url": "https://www.gnu.org/software/gcc/gcc-8/changes.html"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
+          "version": "8.3.0-6"
+        },
+        {
+          "description": "The POWER9 backend in GNU Compiler Collection (GCC) before version 10 could optimize multiple calls of the __builtin_darn intrinsic into a single call, thus reducing the entropy of the random number generator. This occurred because a volatile operation was not specified. For example, within a single execution of a program, the output of every __builtin_darn() call may be the same.",
+          "identifiers": {
+            "CVE": "CVE-2019-15847"
+          },
+          "name": "gcc-8-base",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00056.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00057.html"
+            },
+            {
+              "url": "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91481"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
+          "version": "8.3.0-6"
+        },
+        {
+          "description": "A flaw was found in the way certificate signatures could be forged using collisions found in the SHA-1 algorithm. An attacker could use this weakness to create forged certificate signatures. This issue affects GnuPG versions before 2.2.18.",
+          "identifiers": {
+            "CVE": "CVE-2019-14855"
+          },
+          "name": "gpgv",
+          "references": [
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14855"
+            },
+            {
+              "url": "https://dev.gnupg.org/T4755"
+            },
+            {
+              "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2019q4/000442.html"
+            },
+            {
+              "url": "https://rwc.iacr.org/2020/slides/Leurent.pdf"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gnupg2: OpenPGP Key Certification Forgeries with SHA-1",
+          "version": "2.2.12-1+deb10u1"
+        },
+        {
+          "description": "It was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.",
+          "identifiers": {
+            "CVE": "CVE-2011-3374"
+          },
+          "name": "libapt-pkg5.0",
+          "references": [
+            {
+              "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+            },
+            {
+              "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+            },
+            {
+              "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+            },
+            {
+              "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+            },
+            {
+              "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+            }
+          ],
+          "severity": "MEDIUM",
+          "version": "1.8.2"
+        },
+        {
+          "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard.",
+          "identifiers": {
+            "CVE": "CVE-2019-1010022"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22850"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "glibc: stack guard protection bypass",
+          "version": "2.28-10"
+        },
+        {
+          "description": "A use-after-free vulnerability was found in glibc in the way the tilde expansion was carried out. Directory paths containing an initial tilde followed by a valid username were affected by this issue. A local attacker could exploit this flaw by creating a specially crafted path that, when processed by the glob function, would potentially lead to arbitrary code execution.",
+          "identifiers": {
+            "CVE": "CVE-2020-1752"
+          },
+          "name": "libc-bin",
+          "severity": "HIGH",
+          "summary": "glibc: use-after-free in glob() function when expanding ~user",
+          "version": "2.28-10"
+        },
+        {
+          "description": "An exploitable signed comparison vulnerability exists in the ARMv7 memcpy() implementation of GNU glibc 2.30.9000. Calling memcpy() (on ARMv7 targets that utilize the GNU glibc implementation) with a negative value for the 'num' parameter results in a signed comparison vulnerability. If an attacker underflows the 'num' parameter to memcpy(), this vulnerability could lead to undefined behavior such as writing to out-of-bounds memory and potentially remote code execution. Furthermore, this memcpy() implementation allows for program execution to continue in scenarios where a segmentation fault or crash should have occurred. The dangers occur in that subsequent execution and iterations of this code will be executed with this corrupted data.",
+          "identifiers": {
+            "CVE": "CVE-2020-6096"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25620"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "glibc: signed comparison vulnerability in the ARMv7 memcpy function",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The regcomp implementation in the GNU C Library (aka glibc or libc6) through 2.11.3, and 2.12.x through 2.12.2, allows context-dependent attackers to cause a denial of service (application crash) via a regular expression containing adjacent bounded repetitions that bypass the intended RE_DUP_MAX limitation, as demonstrated by a {10,}{10,}{10,}{10,}{10,} sequence in the proftpd.gnu.c exploit for ProFTPD, related to a \"RE_DUP_MAX overflow.\"",
+          "identifiers": {
+            "CVE": "CVE-2010-4051"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://cxib.net/stuff/proftpd.gnu.c"
+            },
+            {
+              "url": "http://seclists.org/fulldisclosure/2011/Jan/78"
+            },
+            {
+              "url": "http://secunia.com/advisories/42547"
+            },
+            {
+              "url": "http://securityreason.com/achievement_securityalert/93"
+            },
+            {
+              "url": "http://securityreason.com/securityalert/8003"
+            },
+            {
+              "url": "http://securitytracker.com/id?1024832"
+            },
+            {
+              "url": "http://www.exploit-db.com/exploits/15935"
+            },
+            {
+              "url": "http://www.kb.cert.org/vuls/id/912279"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/515589/100/0/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/45233"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=645859"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "version": "2.28-10"
+        },
+        {
+          "description": "Stack consumption vulnerability in the regcomp implementation in the GNU C Library (aka glibc or libc6) through 2.11.3, and 2.12.x through 2.12.2, allows context-dependent attackers to cause a denial of service (resource exhaustion) via a regular expression containing adjacent repetition operators, as demonstrated by a {10,}{10,}{10,}{10,} sequence in the proftpd.gnu.c exploit for ProFTPD.",
+          "identifiers": {
+            "CVE": "CVE-2010-4052"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://cxib.net/stuff/proftpd.gnu.c"
+            },
+            {
+              "url": "http://seclists.org/fulldisclosure/2011/Jan/78"
+            },
+            {
+              "url": "http://secunia.com/advisories/42547"
+            },
+            {
+              "url": "http://securityreason.com/achievement_securityalert/93"
+            },
+            {
+              "url": "http://securityreason.com/securityalert/8003"
+            },
+            {
+              "url": "http://securitytracker.com/id?1024832"
+            },
+            {
+              "url": "http://www.exploit-db.com/exploits/15935"
+            },
+            {
+              "url": "http://www.kb.cert.org/vuls/id/912279"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/515589/100/0/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/45233"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=645859"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "CVE-2010-4051 CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
+          "identifiers": {
+            "CVE": "CVE-2010-4756"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://cxib.net/stuff/glob-0day.c"
+            },
+            {
+              "url": "http://securityreason.com/achievement_securityalert/89"
+            },
+            {
+              "url": "http://securityreason.com/exploitalert/9223"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The iconv program in the GNU C Library (aka glibc or libc6) 2.25 and earlier, when invoked with the -c option, enters an infinite loop when processing invalid multi-byte input sequences, leading to a denial of service.",
+          "identifiers": {
+            "CVE": "CVE-2016-10228"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://openwall.com/lists/oss-security/2017/03/01/10"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/96525"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: iconv program can hang when invoked with the -c option",
+          "version": "2.28-10"
+        },
+        {
+          "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
+          "identifiers": {
+            "CVE": "CVE-2018-20796"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/107160"
+            },
+            {
+              "url": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34141"
+            },
+            {
+              "url": "https://lists.gnu.org/archive/html/bug-gnulib/2019-01/msg00108.html"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20190315-0002/"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "version": "2.28-10"
+        },
+        {
+          "description": "GNU Libc current is affected by: Re-mapping current loaded libray with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code.",
+          "identifiers": {
+            "CVE": "CVE-2019-1010023"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/109167"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22851"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K11932200?utm_source=f5support&amp;utm_medium=RSS"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+          "version": "2.28-10"
+        },
+        {
+          "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc.",
+          "identifiers": {
+            "CVE": "CVE-2019-1010024"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/109162"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22852"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K06046097"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: ASLR bypass using cache of thread stack and heap",
+          "version": "2.28-10"
+        },
+        {
+          "description": "** DISPUTED ** GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.\"",
+          "identifiers": {
+            "CVE": "CVE-2019-1010025"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22853"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: information disclosure of heap addresses of pthread_created thread",
+          "version": "2.28-10"
+        },
+        {
+          "description": "** DISPUTED ** In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern.",
+          "identifiers": {
+            "CVE": "CVE-2019-9192"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=24269"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "version": "2.28-10"
+        },
+        {
+          "description": "No description is available for this CVE.",
+          "identifiers": {
+            "CVE": "CVE-2020-1751"
+          },
+          "name": "libc-bin",
+          "severity": "MEDIUM",
+          "summary": "glibc: array overflow in backtrace functions for powerpc",
+          "version": "2.28-10"
+        },
+        {
+          "description": "On the x86-64 architecture, the GNU C Library (aka glibc) before 2.31 fails to ignore the LD_PREFER_MAP_32BIT_EXEC environment variable during program execution after a security transition, allowing local attackers to restrict the possible mapping addresses for loaded libraries and thus bypass ASLR for a setuid program.",
+          "identifiers": {
+            "CVE": "CVE-2019-19126"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZFJ5E7NWOL6ROE5QVICHKIOUGCPFJVUH/"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25204"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "glibc: LD_PREFER_MAP_32BIT_EXEC not ignored in setuid binaries",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The GNU C Library (aka glibc or libc6) before 2.32 could overflow an on-stack buffer during range reduction if an input to an 80-bit long double function contains a non-canonical bit pattern, a seen when passing a 0x5d414141414141410000 value to sinl on x86 targets. This is related to sysdeps/ieee754/ldbl-96/e_rem_pio2l.c.",
+          "identifiers": {
+            "CVE": "CVE-2020-10029"
+          },
+          "name": "libc-bin",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00033.html"
+            },
+            {
+              "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/23N76M3EDP2GIW4GOIQRYTKRE7PPBRB2/"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20200327-0003/"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25487"
+            },
+            {
+              "url": "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commit;h=9333498794cde1d5cca518badf79533a24114b6f"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "glibc: stack corruption from crafted input in cosl, sinl, sincosl, and tanl functions",
+          "version": "2.28-10"
+        },
+        {
+          "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard.",
+          "identifiers": {
+            "CVE": "CVE-2019-1010022"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22850"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "glibc: stack guard protection bypass",
+          "version": "2.28-10"
+        },
+        {
+          "description": "A use-after-free vulnerability was found in glibc in the way the tilde expansion was carried out. Directory paths containing an initial tilde followed by a valid username were affected by this issue. A local attacker could exploit this flaw by creating a specially crafted path that, when processed by the glob function, would potentially lead to arbitrary code execution.",
+          "identifiers": {
+            "CVE": "CVE-2020-1752"
+          },
+          "name": "libc6",
+          "severity": "HIGH",
+          "summary": "glibc: use-after-free in glob() function when expanding ~user",
+          "version": "2.28-10"
+        },
+        {
+          "description": "An exploitable signed comparison vulnerability exists in the ARMv7 memcpy() implementation of GNU glibc 2.30.9000. Calling memcpy() (on ARMv7 targets that utilize the GNU glibc implementation) with a negative value for the 'num' parameter results in a signed comparison vulnerability. If an attacker underflows the 'num' parameter to memcpy(), this vulnerability could lead to undefined behavior such as writing to out-of-bounds memory and potentially remote code execution. Furthermore, this memcpy() implementation allows for program execution to continue in scenarios where a segmentation fault or crash should have occurred. The dangers occur in that subsequent execution and iterations of this code will be executed with this corrupted data.",
+          "identifiers": {
+            "CVE": "CVE-2020-6096"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25620"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "glibc: signed comparison vulnerability in the ARMv7 memcpy function",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The regcomp implementation in the GNU C Library (aka glibc or libc6) through 2.11.3, and 2.12.x through 2.12.2, allows context-dependent attackers to cause a denial of service (application crash) via a regular expression containing adjacent bounded repetitions that bypass the intended RE_DUP_MAX limitation, as demonstrated by a {10,}{10,}{10,}{10,}{10,} sequence in the proftpd.gnu.c exploit for ProFTPD, related to a \"RE_DUP_MAX overflow.\"",
+          "identifiers": {
+            "CVE": "CVE-2010-4051"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://cxib.net/stuff/proftpd.gnu.c"
+            },
+            {
+              "url": "http://seclists.org/fulldisclosure/2011/Jan/78"
+            },
+            {
+              "url": "http://secunia.com/advisories/42547"
+            },
+            {
+              "url": "http://securityreason.com/achievement_securityalert/93"
+            },
+            {
+              "url": "http://securityreason.com/securityalert/8003"
+            },
+            {
+              "url": "http://securitytracker.com/id?1024832"
+            },
+            {
+              "url": "http://www.exploit-db.com/exploits/15935"
+            },
+            {
+              "url": "http://www.kb.cert.org/vuls/id/912279"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/515589/100/0/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/45233"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=645859"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "version": "2.28-10"
+        },
+        {
+          "description": "Stack consumption vulnerability in the regcomp implementation in the GNU C Library (aka glibc or libc6) through 2.11.3, and 2.12.x through 2.12.2, allows context-dependent attackers to cause a denial of service (resource exhaustion) via a regular expression containing adjacent repetition operators, as demonstrated by a {10,}{10,}{10,}{10,} sequence in the proftpd.gnu.c exploit for ProFTPD.",
+          "identifiers": {
+            "CVE": "CVE-2010-4052"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://cxib.net/stuff/proftpd.gnu.c"
+            },
+            {
+              "url": "http://seclists.org/fulldisclosure/2011/Jan/78"
+            },
+            {
+              "url": "http://secunia.com/advisories/42547"
+            },
+            {
+              "url": "http://securityreason.com/achievement_securityalert/93"
+            },
+            {
+              "url": "http://securityreason.com/securityalert/8003"
+            },
+            {
+              "url": "http://securitytracker.com/id?1024832"
+            },
+            {
+              "url": "http://www.exploit-db.com/exploits/15935"
+            },
+            {
+              "url": "http://www.kb.cert.org/vuls/id/912279"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/515589/100/0/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/45233"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=645859"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "CVE-2010-4051 CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
+          "identifiers": {
+            "CVE": "CVE-2010-4756"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://cxib.net/stuff/glob-0day.c"
+            },
+            {
+              "url": "http://securityreason.com/achievement_securityalert/89"
+            },
+            {
+              "url": "http://securityreason.com/exploitalert/9223"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The iconv program in the GNU C Library (aka glibc or libc6) 2.25 and earlier, when invoked with the -c option, enters an infinite loop when processing invalid multi-byte input sequences, leading to a denial of service.",
+          "identifiers": {
+            "CVE": "CVE-2016-10228"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://openwall.com/lists/oss-security/2017/03/01/10"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/96525"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: iconv program can hang when invoked with the -c option",
+          "version": "2.28-10"
+        },
+        {
+          "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
+          "identifiers": {
+            "CVE": "CVE-2018-20796"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/107160"
+            },
+            {
+              "url": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34141"
+            },
+            {
+              "url": "https://lists.gnu.org/archive/html/bug-gnulib/2019-01/msg00108.html"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20190315-0002/"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "version": "2.28-10"
+        },
+        {
+          "description": "GNU Libc current is affected by: Re-mapping current loaded libray with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code.",
+          "identifiers": {
+            "CVE": "CVE-2019-1010023"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/109167"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22851"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K11932200?utm_source=f5support&amp;utm_medium=RSS"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+          "version": "2.28-10"
+        },
+        {
+          "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc.",
+          "identifiers": {
+            "CVE": "CVE-2019-1010024"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/109162"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22852"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K06046097"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: ASLR bypass using cache of thread stack and heap",
+          "version": "2.28-10"
+        },
+        {
+          "description": "** DISPUTED ** GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.\"",
+          "identifiers": {
+            "CVE": "CVE-2019-1010025"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22853"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: information disclosure of heap addresses of pthread_created thread",
+          "version": "2.28-10"
+        },
+        {
+          "description": "** DISPUTED ** In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern.",
+          "identifiers": {
+            "CVE": "CVE-2019-9192"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=24269"
+            },
+            {
+              "url": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "version": "2.28-10"
+        },
+        {
+          "description": "No description is available for this CVE.",
+          "identifiers": {
+            "CVE": "CVE-2020-1751"
+          },
+          "name": "libc6",
+          "severity": "MEDIUM",
+          "summary": "glibc: array overflow in backtrace functions for powerpc",
+          "version": "2.28-10"
+        },
+        {
+          "description": "On the x86-64 architecture, the GNU C Library (aka glibc) before 2.31 fails to ignore the LD_PREFER_MAP_32BIT_EXEC environment variable during program execution after a security transition, allowing local attackers to restrict the possible mapping addresses for loaded libraries and thus bypass ASLR for a setuid program.",
+          "identifiers": {
+            "CVE": "CVE-2019-19126"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZFJ5E7NWOL6ROE5QVICHKIOUGCPFJVUH/"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25204"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "glibc: LD_PREFER_MAP_32BIT_EXEC not ignored in setuid binaries",
+          "version": "2.28-10"
+        },
+        {
+          "description": "The GNU C Library (aka glibc or libc6) before 2.32 could overflow an on-stack buffer during range reduction if an input to an 80-bit long double function contains a non-canonical bit pattern, a seen when passing a 0x5d414141414141410000 value to sinl on x86 targets. This is related to sysdeps/ieee754/ldbl-96/e_rem_pio2l.c.",
+          "identifiers": {
+            "CVE": "CVE-2020-10029"
+          },
+          "name": "libc6",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00033.html"
+            },
+            {
+              "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/23N76M3EDP2GIW4GOIQRYTKRE7PPBRB2/"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20200327-0003/"
+            },
+            {
+              "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25487"
+            },
+            {
+              "url": "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commit;h=9333498794cde1d5cca518badf79533a24114b6f"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "glibc: stack corruption from crafted input in cosl, sinl, sincosl, and tanl functions",
+          "version": "2.28-10"
+        },
+        {
+          "description": "stack_protect_prologue in cfgexpand.c and stack_protect_epilogue in function.c in GNU Compiler Collection (GCC) 4.1 through 8 (under certain circumstances) generate instruction sequences when targeting ARM targets that spill the address of the stack protector guard, which allows an attacker to bypass the protection of -fstack-protector, -fstack-protector-all, -fstack-protector-strong, and -fstack-protector-explicit against stack overflow by controlling what the stack canary is compared against.",
+          "identifiers": {
+            "CVE": "CVE-2018-12886"
+          },
+          "name": "libgcc1",
+          "references": [
+            {
+              "url": "https://gcc.gnu.org/viewcvs/gcc/trunk/gcc/config/arm/arm-protos.h?revision=266379&view=markup"
+            },
+            {
+              "url": "https://www.gnu.org/software/gcc/gcc-8/changes.html"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
+          "version": "8.3.0-6"
+        },
+        {
+          "description": "The POWER9 backend in GNU Compiler Collection (GCC) before version 10 could optimize multiple calls of the __builtin_darn intrinsic into a single call, thus reducing the entropy of the random number generator. This occurred because a volatile operation was not specified. For example, within a single execution of a program, the output of every __builtin_darn() call may be the same.",
+          "identifiers": {
+            "CVE": "CVE-2019-15847"
+          },
+          "name": "libgcc1",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00056.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00057.html"
+            },
+            {
+              "url": "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91481"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
+          "version": "8.3.0-6"
+        },
+        {
+          "description": "cipher/elgamal.c in Libgcrypt through 1.8.2, when used to encrypt messages directly, improperly encodes plaintexts, which allows attackers to obtain sensitive information by reading ciphertext data (i.e., it does not have semantic security in face of a ciphertext-only attack). The Decisional Diffie-Hellman (DDH) assumption does not hold for Libgcrypt's ElGamal implementation.",
+          "identifiers": {
+            "CVE": "CVE-2018-6829"
+          },
+          "name": "libgcrypt20",
+          "references": [
+            {
+              "url": "https://github.com/weikengchen/attack-on-libgcrypt-elgamal"
+            },
+            {
+              "url": "https://github.com/weikengchen/attack-on-libgcrypt-elgamal/wiki"
+            },
+            {
+              "url": "https://lists.gnupg.org/pipermail/gcrypt-devel/2018-February/004394.html"
+            },
+            {
+              "url": "https://www.oracle.com/security-alerts/cpujan2020.html"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "libgcrypt: ElGamal implementation doesn't have semantic security due to incorrectly encoded plaintexts possibly allowing to obtain sensitive information",
+          "version": "1.8.4-5"
+        },
+        {
+          "description": "In Libgcrypt 1.8.4, the C implementation of AES is vulnerable to a flush-and-reload side-channel attack because physical addresses are available to other processes. (The C implementation is used on platforms where an assembly-language implementation is unavailable.)",
+          "identifiers": {
+            "CVE": "CVE-2019-12904"
+          },
+          "name": "libgcrypt20",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00049.html"
+            },
+            {
+              "url": "https://dev.gnupg.org/T4541"
+            },
+            {
+              "url": "https://github.com/gpg/libgcrypt/commit/a4c561aab1014c3630bc88faf6f5246fee16b020"
+            },
+            {
+              "url": "https://github.com/gpg/libgcrypt/commit/daedbbb5541cd8ecda1459d3b843ea4d92788762"
+            },
+            {
+              "url": "https://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-12904.html"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "Libgcrypt: physical addresses being available to other processes leads to a flush-and-reload side-channel attack",
+          "version": "1.8.4-5"
+        },
+        {
+          "description": "It was discovered that there was a ECDSA timing attack in the libgcrypt20 cryptographic library. Version affected: 1.8.4-5, 1.7.6-2+deb9u3, and 1.6.3-2+deb8u4. Versions fixed: 1.8.5-2 and 1.6.3-2+deb8u7.",
+          "identifiers": {
+            "CVE": "CVE-2019-13627"
+          },
+          "name": "libgcrypt20",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00060.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00018.html"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2019/10/02/2"
+            },
+            {
+              "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13627"
+            },
+            {
+              "url": "https://dev.gnupg.org/T4683"
+            },
+            {
+              "url": "https://github.com/gpg/libgcrypt/releases/tag/libgcrypt-1.8.5"
+            },
+            {
+              "url": "https://lists.debian.org/debian-lts-announce/2019/09/msg00024.html"
+            },
+            {
+              "url": "https://lists.debian.org/debian-lts-announce/2020/01/msg00001.html"
+            },
+            {
+              "url": "https://minerva.crocs.fi.muni.cz/"
+            },
+            {
+              "url": "https://security-tracker.debian.org/tracker/CVE-2019-13627"
+            },
+            {
+              "url": "https://security.gentoo.org/glsa/202003-32"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4236-1/"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4236-2/"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4236-3/"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "libgcrypt: ECDSA timing attack in the libgcrypt20 cryptographic library",
+          "version": "1.8.4-5"
+        },
+        {
+          "description": "The SSL protocol, as used in certain configurations in Microsoft Windows and Microsoft Internet Explorer, Mozilla Firefox, Google Chrome, Opera, and other products, encrypts data by using CBC mode with chained initialization vectors, which allows man-in-the-middle attackers to obtain plaintext HTTP headers via a blockwise chosen-boundary attack (BCBA) on an HTTPS session, in conjunction with JavaScript code that uses (1) the HTML5 WebSocket API, (2) the Java URLConnection API, or (3) the Silverlight WebClient API, aka a \"BEAST\" attack.",
+          "identifiers": {
+            "CVE": "CVE-2011-3389"
+          },
+          "name": "libgnutls30",
+          "references": [
+            {
+              "url": "http://blog.mozilla.com/security/2011/09/27/attack-against-tls-protected-communications/"
+            },
+            {
+              "url": "http://blogs.technet.com/b/msrc/archive/2011/09/26/microsoft-releases-security-advisory-2588513.aspx"
+            },
+            {
+              "url": "http://blogs.technet.com/b/srd/archive/2011/09/26/is-ssl-broken-more-about-security-advisory-2588513.aspx"
+            },
+            {
+              "url": "http://curl.haxx.se/docs/adv_20120124B.html"
+            },
+            {
+              "url": "http://downloads.asterisk.org/pub/security/AST-2016-001.html"
+            },
+            {
+              "url": "http://ekoparty.org/2011/juliano-rizzo.php"
+            },
+            {
+              "url": "http://eprint.iacr.org/2004/111"
+            },
+            {
+              "url": "http://eprint.iacr.org/2006/136"
+            },
+            {
+              "url": "http://googlechromereleases.blogspot.com/2011/10/chrome-stable-release.html"
+            },
+            {
+              "url": "http://isc.sans.edu/diary/SSL+TLS+part+3+/11635"
+            },
+            {
+              "url": "http://linux.oracle.com/cve/CVE-2011-3389.html"
+            },
+            {
+              "url": "http://linux.oracle.com/errata/ELSA-2011-1380.html"
+            },
+            {
+              "url": "http://lists.apple.com/archives/Security-announce/2011//Oct/msg00001.html"
+            },
+            {
+              "url": "http://lists.apple.com/archives/Security-announce/2011//Oct/msg00002.html"
+            },
+            {
+              "url": "http://lists.apple.com/archives/security-announce/2012/Feb/msg00000.html"
+            },
+            {
+              "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00001.html"
+            },
+            {
+              "url": "http://lists.apple.com/archives/security-announce/2012/May/msg00001.html"
+            },
+            {
+              "url": "http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html"
+            },
+            {
+              "url": "http://lists.apple.com/archives/security-announce/2013/Oct/msg00004.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00049.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00051.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2012-05/msg00009.html"
+            },
+            {
+              "url": "http://marc.info/?l=bugtraq&m=132750579901589&w=2"
+            },
+            {
+              "url": "http://marc.info/?l=bugtraq&m=132872385320240&w=2"
+            },
+            {
+              "url": "http://marc.info/?l=bugtraq&m=133365109612558&w=2"
+            },
+            {
+              "url": "http://marc.info/?l=bugtraq&m=133728004526190&w=2"
+            },
+            {
+              "url": "http://marc.info/?l=bugtraq&m=134254866602253&w=2"
+            },
+            {
+              "url": "http://marc.info/?l=bugtraq&m=134254957702612&w=2"
+            },
+            {
+              "url": "http://my.opera.com/securitygroup/blog/2011/09/28/the-beast-ssl-tls-issue"
+            },
+            {
+              "url": "http://osvdb.org/74829"
+            },
+            {
+              "url": "http://rhn.redhat.com/errata/RHSA-2012-0508.html"
+            },
+            {
+              "url": "http://rhn.redhat.com/errata/RHSA-2013-1455.html"
+            },
+            {
+              "url": "http://secunia.com/advisories/45791"
+            },
+            {
+              "url": "http://secunia.com/advisories/47998"
+            },
+            {
+              "url": "http://secunia.com/advisories/48256"
+            },
+            {
+              "url": "http://secunia.com/advisories/48692"
+            },
+            {
+              "url": "http://secunia.com/advisories/48915"
+            },
+            {
+              "url": "http://secunia.com/advisories/48948"
+            },
+            {
+              "url": "http://secunia.com/advisories/49198"
+            },
+            {
+              "url": "http://secunia.com/advisories/55322"
+            },
+            {
+              "url": "http://secunia.com/advisories/55350"
+            },
+            {
+              "url": "http://secunia.com/advisories/55351"
+            },
+            {
+              "url": "http://security.gentoo.org/glsa/glsa-201203-02.xml"
+            },
+            {
+              "url": "http://security.gentoo.org/glsa/glsa-201406-32.xml"
+            },
+            {
+              "url": "http://support.apple.com/kb/HT4999"
+            },
+            {
+              "url": "http://support.apple.com/kb/HT5001"
+            },
+            {
+              "url": "http://support.apple.com/kb/HT5130"
+            },
+            {
+              "url": "http://support.apple.com/kb/HT5281"
+            },
+            {
+              "url": "http://support.apple.com/kb/HT5501"
+            },
+            {
+              "url": "http://support.apple.com/kb/HT6150"
+            },
+            {
+              "url": "http://technet.microsoft.com/security/advisory/2588513"
+            },
+            {
+              "url": "http://vnhacker.blogspot.com/2011/09/beast.html"
+            },
+            {
+              "url": "http://www.apcmedia.com/salestools/SJHN-7RKGNM/SJHN-7RKGNM_R4_EN.pdf"
+            },
+            {
+              "url": "http://www.debian.org/security/2012/dsa-2398"
+            },
+            {
+              "url": "http://www.educatedguesswork.org/2011/09/security_impact_of_the_rizzodu.html"
+            },
+            {
+              "url": "http://www.ibm.com/developerworks/java/jdk/alerts/"
+            },
+            {
+              "url": "http://www.imperialviolet.org/2011/09/23/chromeandbeast.html"
+            },
+            {
+              "url": "http://www.insecure.cl/Beast-SSL.rar"
+            },
+            {
+              "url": "http://www.kb.cert.org/vuls/id/864643"
+            },
+            {
+              "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2012:058"
+            },
+            {
+              "url": "http://www.opera.com/docs/changelogs/mac/1151/"
+            },
+            {
+              "url": "http://www.opera.com/docs/changelogs/mac/1160/"
+            },
+            {
+              "url": "http://www.opera.com/docs/changelogs/unix/1151/"
+            },
+            {
+              "url": "http://www.opera.com/docs/changelogs/unix/1160/"
+            },
+            {
+              "url": "http://www.opera.com/docs/changelogs/windows/1151/"
+            },
+            {
+              "url": "http://www.opera.com/docs/changelogs/windows/1160/"
+            },
+            {
+              "url": "http://www.opera.com/support/kb/view/1004/"
+            },
+            {
+              "url": "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html"
+            },
+            {
+              "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
+            },
+            {
+              "url": "http://www.oracle.com/technetwork/topics/security/javacpuoct2011-443431.html"
+            },
+            {
+              "url": "http://www.redhat.com/support/errata/RHSA-2011-1384.html"
+            },
+            {
+              "url": "http://www.redhat.com/support/errata/RHSA-2012-0006.html"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/49388"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/49778"
+            },
+            {
+              "url": "http://www.securitytracker.com/id/1029190"
+            },
+            {
+              "url": "http://www.securitytracker.com/id?1025997"
+            },
+            {
+              "url": "http://www.securitytracker.com/id?1026103"
+            },
+            {
+              "url": "http://www.securitytracker.com/id?1026704"
+            },
+            {
+              "url": "http://www.ubuntu.com/usn/USN-1263-1"
+            },
+            {
+              "url": "http://www.us-cert.gov/cas/techalerts/TA12-010A.html"
+            },
+            {
+              "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_fetchmail"
+            },
+            {
+              "url": "https://bugzilla.novell.com/show_bug.cgi?id=719047"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=737506"
+            },
+            {
+              "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3389"
+            },
+            {
+              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2012/ms12-006"
+            },
+            {
+              "url": "https://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03839862"
+            },
+            {
+              "url": "https://hermes.opensuse.org/messages/13154861"
+            },
+            {
+              "url": "https://hermes.opensuse.org/messages/13155432"
+            },
+            {
+              "url": "https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02"
+            },
+            {
+              "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14752"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "HTTPS: block-wise chosen-plaintext attack against SSL/TLS (BEAST)",
+          "version": "3.6.7-4+deb10u2"
+        },
+        {
+          "description": "GnuTLS 3.6.x before 3.6.13 uses incorrect cryptography for DTLS. The earliest affected version is 3.6.3 (2018-07-16) because of an error in a 2017-10-06 commit. The DTLS client always uses 32 '\\0' bytes instead of a random value, and thus contributes no randomness to a DTLS negotiation. This breaks the security guarantees of the DTLS protocol.",
+          "identifiers": {
+            "CVE": "CVE-2020-11501"
+          },
+          "name": "libgnutls30",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00015.html"
+            },
+            {
+              "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11501"
+            },
+            {
+              "url": "https://gitlab.com/gnutls/gnutls/-/commit/5b595e8e52653f6c5726a4cdd8fddeb6e83804d2"
+            },
+            {
+              "url": "https://gitlab.com/gnutls/gnutls/-/issues/960"
+            },
+            {
+              "url": "https://www.debian.org/security/2020/dsa-4652"
+            },
+            {
+              "url": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2020-03-31"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gnutls: DTLS client hello contains a random value of all zeroes",
+          "version": "3.6.7-4+deb10u2"
+        },
+        {
+          "description": "GNU libidn2 before 2.2.0 fails to perform the roundtrip checks specified in RFC3490 Section 4.2 when converting A-labels to U-labels. This makes it possible in some circumstances for one domain to impersonate another. By creating a malicious domain that matches a target domain except for the inclusion of certain punycoded Unicode characters (that would be discarded when converted first to a Unicode label and then back to an ASCII label), arbitrary domains can be impersonated.",
+          "identifiers": {
+            "CVE": "CVE-2019-12290"
+          },
+          "name": "libidn2-0",
+          "references": [
+            {
+              "url": "https://gitlab.com/libidn/libidn2/commit/241e8f486134793cb0f4a5b0e5817a97883401f5"
+            },
+            {
+              "url": "https://gitlab.com/libidn/libidn2/commit/614117ef6e4c60e1950d742e3edf0a0ef8d389de"
+            },
+            {
+              "url": "https://gitlab.com/libidn/libidn2/merge_requests/71"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4168-1/"
+            }
+          ],
+          "severity": "MEDIUM",
+          "version": "2.0.5-1+deb10u1"
+        },
+        {
+          "description": "LZ4 before 1.9.2 has a heap-based buffer overflow in LZ4_write32 (related to LZ4_compress_destSize), affecting applications that call LZ4_compress_fast with a large input. (This issue can also lead to data corruption.) NOTE: the vendor states \"only a few specific / uncommon usages of the API are at risk.\"",
+          "identifiers": {
+            "CVE": "CVE-2019-17543"
+          },
+          "name": "liblz4-1",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00069.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00070.html"
+            },
+            {
+              "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=15941"
+            },
+            {
+              "url": "https://github.com/lz4/lz4/compare/v1.9.1...v1.9.2"
+            },
+            {
+              "url": "https://github.com/lz4/lz4/issues/801"
+            },
+            {
+              "url": "https://github.com/lz4/lz4/pull/756"
+            },
+            {
+              "url": "https://github.com/lz4/lz4/pull/760"
+            },
+            {
+              "url": "https://lists.apache.org/thread.html/25015588b770d67470b7ba7ea49a305d6735dd7f00eabe7d50ec1e17@%3Cissues.arrow.apache.org%3E"
+            },
+            {
+              "url": "https://lists.apache.org/thread.html/793012683dc0fa6819b7c2560e6cf990811014c40c7d75412099c357@%3Cissues.arrow.apache.org%3E"
+            },
+            {
+              "url": "https://lists.apache.org/thread.html/9ff0606d16be2ab6a81619e1c9e23c3e251756638e36272c8c8b7fa3@%3Cissues.arrow.apache.org%3E"
+            },
+            {
+              "url": "https://lists.apache.org/thread.html/f0038c4fab2ee25aee849ebeff6b33b3aa89e07ccfb06b5c87b36316@%3Cissues.arrow.apache.org%3E"
+            },
+            {
+              "url": "https://lists.apache.org/thread.html/f506bc371d4a068d5d84d7361293568f61167d3a1c3e91f0def2d7d3@%3Cdev.arrow.apache.org%3E"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "lz4: heap-based buffer overflow in LZ4_write32",
+          "version": "1.8.3-1"
+        },
+        {
+          "description": "In PCRE 8.41, the OP_KETRMAX feature in the match function in pcre_exec.c allows stack exhaustion (uncontrolled recursion) when processing a crafted regular expression.",
+          "identifiers": {
+            "CVE": "CVE-2017-11164"
+          },
+          "name": "libpcre3",
+          "references": [
+            {
+              "url": "http://openwall.com/lists/oss-security/2017/07/11/3"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/99575"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "pcre: OP_KETRMAX feature in the match function in pcre_exec.c",
+          "version": "2:8.39-12"
+        },
+        {
+          "description": "Stack-based buffer overflow in the pcre32_copy_substring function in pcre_get.c in libpcre1 in PCRE 8.40 allows remote attackers to cause a denial of service (WRITE of size 4) or possibly have unspecified other impact via a crafted file.",
+          "identifiers": {
+            "CVE": "CVE-2017-7245"
+          },
+          "name": "libpcre3",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/97067"
+            },
+            {
+              "url": "https://access.redhat.com/errata/RHSA-2018:2486"
+            },
+            {
+              "url": "https://blogs.gentoo.org/ago/2017/03/20/libpcre-two-stack-based-buffer-overflow-write-in-pcre32_copy_substring-pcre_get-c/"
+            },
+            {
+              "url": "https://security.gentoo.org/glsa/201710-25"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "pcre: stack-based buffer overflow write in pcre32_copy_substring",
+          "version": "2:8.39-12"
+        },
+        {
+          "description": "Stack-based buffer overflow in the pcre32_copy_substring function in pcre_get.c in libpcre1 in PCRE 8.40 allows remote attackers to cause a denial of service (WRITE of size 268) or possibly have unspecified other impact via a crafted file.",
+          "identifiers": {
+            "CVE": "CVE-2017-7246"
+          },
+          "name": "libpcre3",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/97067"
+            },
+            {
+              "url": "https://access.redhat.com/errata/RHSA-2018:2486"
+            },
+            {
+              "url": "https://blogs.gentoo.org/ago/2017/03/20/libpcre-two-stack-based-buffer-overflow-write-in-pcre32_copy_substring-pcre_get-c/"
+            },
+            {
+              "url": "https://security.gentoo.org/glsa/201710-25"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "pcre: stack-based buffer overflow write in pcre32_copy_substring",
+          "version": "2:8.39-12"
+        },
+        {
+          "description": "** DISPUTED ** In PCRE 8.41, after compiling, a pcretest load test PoC produces a crash overflow in the function match() in pcre_exec.c because of a self-recursive call. NOTE: third parties dispute the relevance of this report, noting that there are options that can be used to limit the amount of stack that is used.",
+          "identifiers": {
+            "CVE": "CVE-2017-16231"
+          },
+          "name": "libpcre3",
+          "references": [
+            {
+              "url": "http://packetstormsecurity.com/files/150897/PCRE-8.41-Buffer-Overflow.html"
+            },
+            {
+              "url": "http://seclists.org/fulldisclosure/2018/Dec/33"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2017/11/01/11"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2017/11/01/3"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2017/11/01/7"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2017/11/01/8"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/101688"
+            },
+            {
+              "url": "https://bugs.exim.org/show_bug.cgi?id=2047"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "pcre: self-recursive call in match() in pcre_exec.c leads to denial of service",
+          "version": "2:8.39-12"
+        },
+        {
+          "description": "libseccomp before 2.4.0 did not correctly generate 64-bit syscall argument comparisons using the arithmetic operators (LT, GT, LE, GE), which might able to lead to bypassing seccomp filters and potential privilege escalations.",
+          "identifiers": {
+            "CVE": "CVE-2019-9893"
+          },
+          "name": "libseccomp2",
+          "references": [
+            {
+              "url": "http://linux.oracle.com/cve/CVE-2019-9893.html"
+            },
+            {
+              "url": "http://linux.oracle.com/errata/ELSA-2019-3624.html"
+            },
+            {
+              "url": "https://github.com/seccomp/libseccomp/issues/139"
+            },
+            {
+              "url": "https://seclists.org/oss-sec/2019/q1/179"
+            },
+            {
+              "url": "https://security.gentoo.org/glsa/201904-18"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4001-1/"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4001-2/"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "libseccomp: incorrect generation of syscall filters in libseccomp",
+          "version": "2.3.3-4"
+        },
+        {
+          "description": "stack_protect_prologue in cfgexpand.c and stack_protect_epilogue in function.c in GNU Compiler Collection (GCC) 4.1 through 8 (under certain circumstances) generate instruction sequences when targeting ARM targets that spill the address of the stack protector guard, which allows an attacker to bypass the protection of -fstack-protector, -fstack-protector-all, -fstack-protector-strong, and -fstack-protector-explicit against stack overflow by controlling what the stack canary is compared against.",
+          "identifiers": {
+            "CVE": "CVE-2018-12886"
+          },
+          "name": "libstdc++6",
+          "references": [
+            {
+              "url": "https://gcc.gnu.org/viewcvs/gcc/trunk/gcc/config/arm/arm-protos.h?revision=266379&view=markup"
+            },
+            {
+              "url": "https://www.gnu.org/software/gcc/gcc-8/changes.html"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
+          "version": "8.3.0-6"
+        },
+        {
+          "description": "The POWER9 backend in GNU Compiler Collection (GCC) before version 10 could optimize multiple calls of the __builtin_darn intrinsic into a single call, thus reducing the entropy of the random number generator. This occurred because a volatile operation was not specified. For example, within a single execution of a program, the output of every __builtin_darn() call may be the same.",
+          "identifiers": {
+            "CVE": "CVE-2019-15847"
+          },
+          "name": "libstdc++6",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00056.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00057.html"
+            },
+            {
+              "url": "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91481"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
+          "version": "8.3.0-6"
+        },
+        {
+          "description": "It was discovered that a systemd service that uses DynamicUser property can create a SUID/SGID binary that would be allowed to run as the transient service UID/GID even after the service is terminated. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the UID/GID will be recycled.",
+          "identifiers": {
+            "CVE": "CVE-2019-3843"
+          },
+          "name": "libsystemd0",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/108116"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3843"
+            },
+            {
+              "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5JXQAKSTMABZ46EVCRMW62DHWYHTTFES/"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20190619-0002/"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "systemd: services with DynamicUser can create SUID/SGID binaries",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "It was discovered that a systemd service that uses DynamicUser property can get new privileges through the execution of SUID binaries, which would allow to create binaries owned by the service transient group with the setgid bit set. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the GID will be recycled.",
+          "identifiers": {
+            "CVE": "CVE-2019-3844"
+          },
+          "name": "libsystemd0",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/108096"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3844"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20190619-0002/"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "A heap use-after-free vulnerability was found in systemd before version v245-rc1, where asynchronous Polkit queries are performed while handling dbus messages. A local unprivileged attacker can abuse this flaw to crash systemd services or potentially execute code and elevate their privileges, by sending specially crafted dbus messages.",
+          "identifiers": {
+            "CVE": "CVE-2020-1712"
+          },
+          "name": "libsystemd0",
+          "references": [
+            {
+              "url": "http://linux.oracle.com/cve/CVE-2020-1712.html"
+            },
+            {
+              "url": "http://linux.oracle.com/errata/ELSA-2020-0575.html"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1712"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/1068447e6954dc6ce52f099ed174c442cb89ed54"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/637486261528e8aa3da9f26a4487dc254f4b7abb"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/bc130b6858327b382b07b3985cf48e2aa9016b2d"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/ea0d0ede03c6f18dbc5036c5e9cccf97e415ccc2"
+            },
+            {
+              "url": "https://www.openwall.com/lists/oss-security/2020/02/05/1"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "systemd: use-after-free when asynchronous polkit queries are performed",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "systemd, when updating file permissions, allows local users to change the permissions and SELinux security contexts for arbitrary files via a symlink attack on unspecified files.",
+          "identifiers": {
+            "CVE": "CVE-2013-4392"
+          },
+          "name": "libsystemd0",
+          "references": [
+            {
+              "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=725357"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2013/10/01/9"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=859060"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "An issue was discovered in button_open in login/logind-button.c in systemd before 243. When executing the udevadm trigger command, a memory leak may occur.",
+          "identifiers": {
+            "CVE": "CVE-2019-20386"
+          },
+          "name": "libsystemd0",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00014.html"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/b2774a3ae692113e1f47a336a6c09bac9cfb49ad"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20200210-0002/"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4269-1/"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "systemd: a memory leak was discovered in button_open in login/logind-button.c when udev events are received",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "GNU Libtasn1-4.13 libtasn1-4.13 version libtasn1-4.13, libtasn1-4.12 contains a DoS, specifically CPU usage will reach 100% when running asn1Paser against the POC due to an issue in _asn1_expand_object_id(p_tree), after a long time, the program will be killed. This attack appears to be exploitable via parsing a crafted file.",
+          "identifiers": {
+            "CVE": "CVE-2018-1000654"
+          },
+          "name": "libtasn1-6",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00009.html"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00018.html"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/105151"
+            },
+            {
+              "url": "https://gitlab.com/gnutls/libtasn1/issues/4"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "libtasn1: Infinite loop in _asn1_expand_object_id(ptree) leads to memory exhaustion",
+          "version": "4.13-3"
+        },
+        {
+          "description": "It was discovered that a systemd service that uses DynamicUser property can create a SUID/SGID binary that would be allowed to run as the transient service UID/GID even after the service is terminated. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the UID/GID will be recycled.",
+          "identifiers": {
+            "CVE": "CVE-2019-3843"
+          },
+          "name": "libudev1",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/108116"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3843"
+            },
+            {
+              "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5JXQAKSTMABZ46EVCRMW62DHWYHTTFES/"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20190619-0002/"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "systemd: services with DynamicUser can create SUID/SGID binaries",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "It was discovered that a systemd service that uses DynamicUser property can get new privileges through the execution of SUID binaries, which would allow to create binaries owned by the service transient group with the setgid bit set. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the GID will be recycled.",
+          "identifiers": {
+            "CVE": "CVE-2019-3844"
+          },
+          "name": "libudev1",
+          "references": [
+            {
+              "url": "http://www.securityfocus.com/bid/108096"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3844"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20190619-0002/"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "A heap use-after-free vulnerability was found in systemd before version v245-rc1, where asynchronous Polkit queries are performed while handling dbus messages. A local unprivileged attacker can abuse this flaw to crash systemd services or potentially execute code and elevate their privileges, by sending specially crafted dbus messages.",
+          "identifiers": {
+            "CVE": "CVE-2020-1712"
+          },
+          "name": "libudev1",
+          "references": [
+            {
+              "url": "http://linux.oracle.com/cve/CVE-2020-1712.html"
+            },
+            {
+              "url": "http://linux.oracle.com/errata/ELSA-2020-0575.html"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1712"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/1068447e6954dc6ce52f099ed174c442cb89ed54"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/637486261528e8aa3da9f26a4487dc254f4b7abb"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/bc130b6858327b382b07b3985cf48e2aa9016b2d"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/ea0d0ede03c6f18dbc5036c5e9cccf97e415ccc2"
+            },
+            {
+              "url": "https://www.openwall.com/lists/oss-security/2020/02/05/1"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "systemd: use-after-free when asynchronous polkit queries are performed",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "systemd, when updating file permissions, allows local users to change the permissions and SELinux security contexts for arbitrary files via a symlink attack on unspecified files.",
+          "identifiers": {
+            "CVE": "CVE-2013-4392"
+          },
+          "name": "libudev1",
+          "references": [
+            {
+              "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=725357"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2013/10/01/9"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=859060"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "An issue was discovered in button_open in login/logind-button.c in systemd before 243. When executing the udevadm trigger command, a memory leak may occur.",
+          "identifiers": {
+            "CVE": "CVE-2019-20386"
+          },
+          "name": "libudev1",
+          "references": [
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00014.html"
+            },
+            {
+              "url": "https://github.com/systemd/systemd/commit/b2774a3ae692113e1f47a336a6c09bac9cfb49ad"
+            },
+            {
+              "url": "https://security.netapp.com/advisory/ntap-20200210-0002/"
+            },
+            {
+              "url": "https://usn.ubuntu.com/4269-1/"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "systemd: a memory leak was discovered in button_open in login/logind-button.c when udev events are received",
+          "version": "241-7~deb10u3"
+        },
+        {
+          "description": "extensions/libxt_tcp.c in iptables through 1.4.21 does not match TCP SYN+FIN packets in --syn rules, which might allow remote attackers to bypass intended firewall restrictions via crafted packets.  NOTE: the CVE-2012-6638 fix makes this issue less relevant.",
+          "identifiers": {
+            "CVE": "CVE-2012-2663"
+          },
+          "name": "libxtables12",
+          "references": [
+            {
+              "url": "http://www.spinics.net/lists/netfilter-devel/msg21248.html"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=826702"
+            }
+          ],
+          "severity": "HIGH",
+          "summary": "iptables: --syn flag bypass",
+          "version": "1.8.2-4"
+        },
+        {
+          "description": "A buffer overflow in iptables-restore in netfilter iptables 1.8.2 allows an attacker to (at least) crash the program or potentially gain code execution via a specially crafted iptables-save file. This is related to add_param_to_argv in xshared.c.",
+          "identifiers": {
+            "CVE": "CVE-2019-11360"
+          },
+          "name": "libxtables12",
+          "references": [
+            {
+              "url": "https://0day.work/cve-2019-11360-bufferoverflow-in-iptables-restore-v1-8-2/"
+            },
+            {
+              "url": "https://git.netfilter.org/iptables/commit/iptables/xshared.c?id=2ae1099a42e6a0f06de305ca13a842ac83d4683e"
+            }
+          ],
+          "severity": "MEDIUM",
+          "version": "1.8.2-4"
+        },
+        {
+          "description": "initscripts in rPath Linux 1 sets insecure permissions for the /var/log/btmp file, which allows local users to obtain sensitive information regarding authentication attempts.  NOTE: because sshd detects the insecure permissions and does not log certain events, this also prevents sshd from logging failed authentication attempts by remote attackers.",
+          "identifiers": {
+            "CVE": "CVE-2007-5686"
+          },
+          "name": "login",
+          "references": [
+            {
+              "url": "http://secunia.com/advisories/27215"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/482129/100/100/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/482857/100/0/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/26048"
+            },
+            {
+              "url": "http://www.vupen.com/english/advisories/2007/3474"
+            },
+            {
+              "url": "https://issues.rpath.com/browse/RPL-1825"
+            }
+          ],
+          "severity": "MEDIUM",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "An issue was discovered in shadow 4.5. newgidmap (in shadow-utils) is setuid and allows an unprivileged user to be placed in a user namespace where setgroups(2) is permitted. This allows an attacker to remove themselves from a supplementary group, which may allow access to certain filesystem paths if the administrator has used \"group blacklisting\" (e.g., chmod g-rwx) to restrict access to paths. This flaw effectively reverts a security feature in the kernel (in particular, the /proc/self/setgroups knob) to prevent this sort of privilege escalation.",
+          "identifiers": {
+            "CVE": "CVE-2018-7169"
+          },
+          "name": "login",
+          "references": [
+            {
+              "url": "https://bugs.launchpad.net/ubuntu/+source/shadow/+bug/1729357"
+            },
+            {
+              "url": "https://security.gentoo.org/glsa/201805-09"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "shadow 4.8, in certain circumstances affecting at least Gentoo, Arch Linux, and Void Linux, allows local users to obtain root access because setuid programs are misconfigured. Specifically, this affects shadow 4.8 when compiled using --with-libpam but without explicitly passing --disable-account-tools-setuid, and without a PAM configuration suitable for use with setuid account management tools. This combination leads to account management tools (groupadd, groupdel, groupmod, useradd, userdel, usermod) that can easily be used by unprivileged local users to escalate privileges to root in multiple ways. This issue became much more relevant in approximately December 2019 when an unrelated bug was fixed (i.e., the chmod calls to suidusbins were fixed in the upstream Makefile which is now included in the release version 4.8).",
+          "identifiers": {
+            "CVE": "CVE-2019-19882"
+          },
+          "name": "login",
+          "references": [
+            {
+              "url": "https://bugs.archlinux.org/task/64836"
+            },
+            {
+              "url": "https://bugs.gentoo.org/702252"
+            },
+            {
+              "url": "https://github.com/shadow-maint/shadow/commit/edf7547ad5aa650be868cf2dac58944773c12d75"
+            },
+            {
+              "url": "https://github.com/shadow-maint/shadow/pull/199"
+            },
+            {
+              "url": "https://github.com/void-linux/void-packages/pull/17580"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "shadow-utils: local users can obtain root access because setuid programs are misconfigured",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "shadow: TOCTOU (time-of-check time-of-use) race condition when copying and removing directory trees",
+          "identifiers": {
+            "CVE": "CVE-2013-4235"
+          },
+          "name": "login",
+          "references": [
+            {
+              "url": "https://access.redhat.com/security/cve/cve-2013-4235"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-4235"
+            },
+            {
+              "url": "https://security-tracker.debian.org/tracker/CVE-2013-4235"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "shadow-utils: TOCTOU race conditions by copying and removing directory trees",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "identifiers": {
+            "CVE": "TEMP-0628843-DBAD28"
+          },
+          "name": "login",
+          "severity": "LOW",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "initscripts in rPath Linux 1 sets insecure permissions for the /var/log/btmp file, which allows local users to obtain sensitive information regarding authentication attempts.  NOTE: because sshd detects the insecure permissions and does not log certain events, this also prevents sshd from logging failed authentication attempts by remote attackers.",
+          "identifiers": {
+            "CVE": "CVE-2007-5686"
+          },
+          "name": "passwd",
+          "references": [
+            {
+              "url": "http://secunia.com/advisories/27215"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/482129/100/100/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/archive/1/482857/100/0/threaded"
+            },
+            {
+              "url": "http://www.securityfocus.com/bid/26048"
+            },
+            {
+              "url": "http://www.vupen.com/english/advisories/2007/3474"
+            },
+            {
+              "url": "https://issues.rpath.com/browse/RPL-1825"
+            }
+          ],
+          "severity": "MEDIUM",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "An issue was discovered in shadow 4.5. newgidmap (in shadow-utils) is setuid and allows an unprivileged user to be placed in a user namespace where setgroups(2) is permitted. This allows an attacker to remove themselves from a supplementary group, which may allow access to certain filesystem paths if the administrator has used \"group blacklisting\" (e.g., chmod g-rwx) to restrict access to paths. This flaw effectively reverts a security feature in the kernel (in particular, the /proc/self/setgroups knob) to prevent this sort of privilege escalation.",
+          "identifiers": {
+            "CVE": "CVE-2018-7169"
+          },
+          "name": "passwd",
+          "references": [
+            {
+              "url": "https://bugs.launchpad.net/ubuntu/+source/shadow/+bug/1729357"
+            },
+            {
+              "url": "https://security.gentoo.org/glsa/201805-09"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "shadow 4.8, in certain circumstances affecting at least Gentoo, Arch Linux, and Void Linux, allows local users to obtain root access because setuid programs are misconfigured. Specifically, this affects shadow 4.8 when compiled using --with-libpam but without explicitly passing --disable-account-tools-setuid, and without a PAM configuration suitable for use with setuid account management tools. This combination leads to account management tools (groupadd, groupdel, groupmod, useradd, userdel, usermod) that can easily be used by unprivileged local users to escalate privileges to root in multiple ways. This issue became much more relevant in approximately December 2019 when an unrelated bug was fixed (i.e., the chmod calls to suidusbins were fixed in the upstream Makefile which is now included in the release version 4.8).",
+          "identifiers": {
+            "CVE": "CVE-2019-19882"
+          },
+          "name": "passwd",
+          "references": [
+            {
+              "url": "https://bugs.archlinux.org/task/64836"
+            },
+            {
+              "url": "https://bugs.gentoo.org/702252"
+            },
+            {
+              "url": "https://github.com/shadow-maint/shadow/commit/edf7547ad5aa650be868cf2dac58944773c12d75"
+            },
+            {
+              "url": "https://github.com/shadow-maint/shadow/pull/199"
+            },
+            {
+              "url": "https://github.com/void-linux/void-packages/pull/17580"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "shadow-utils: local users can obtain root access because setuid programs are misconfigured",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "shadow: TOCTOU (time-of-check time-of-use) race condition when copying and removing directory trees",
+          "identifiers": {
+            "CVE": "CVE-2013-4235"
+          },
+          "name": "passwd",
+          "references": [
+            {
+              "url": "https://access.redhat.com/security/cve/cve-2013-4235"
+            },
+            {
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-4235"
+            },
+            {
+              "url": "https://security-tracker.debian.org/tracker/CVE-2013-4235"
+            }
+          ],
+          "severity": "LOW",
+          "summary": "shadow-utils: TOCTOU race conditions by copying and removing directory trees",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "identifiers": {
+            "CVE": "TEMP-0628843-DBAD28"
+          },
+          "name": "passwd",
+          "severity": "LOW",
+          "version": "1:4.5-1.1"
+        },
+        {
+          "description": "_is_safe in the File::Temp module for Perl does not properly handle symlinks.",
+          "identifiers": {
+            "CVE": "CVE-2011-4116"
+          },
+          "name": "perl-base",
+          "references": [
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2011/11/04/2"
+            },
+            {
+              "url": "http://www.openwall.com/lists/oss-security/2011/11/04/4"
+            },
+            {
+              "url": "https://github.com/Perl-Toolchain-Gang/File-Temp/issues/14"
+            },
+            {
+              "url": "https://rt.cpan.org/Public/Bug/Display.html?id=69106"
+            },
+            {
+              "url": "https://seclists.org/oss-sec/2011/q4/238"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "perl: File::Temp insecure temporary file handling",
+          "version": "5.28.1-6"
+        },
+        {
+          "identifiers": {
+            "CVE": "TEMP-0517018-A83CE6"
+          },
+          "name": "sysvinit-utils",
+          "severity": "LOW",
+          "version": "2.93-8"
+        },
+        {
+          "description": "Tar 1.15.1 does not properly warn the user when extracting setuid or setgid files, which may allow local users or remote attackers to gain privileges.",
+          "identifiers": {
+            "CVE": "CVE-2005-2541"
+          },
+          "name": "tar",
+          "references": [
+            {
+              "url": "http://marc.info/?l=bugtraq&m=112327628230258&w=2"
+            }
+          ],
+          "severity": "CRITICAL",
+          "version": "1.30+dfsg-6"
+        },
+        {
+          "description": "pax_decode_header in sparse.c in GNU Tar before 1.32 had a NULL pointer dereference when parsing certain archives that have malformed extended headers.",
+          "identifiers": {
+            "CVE": "CVE-2019-9923"
+          },
+          "name": "tar",
+          "references": [
+            {
+              "url": "http://git.savannah.gnu.org/cgit/tar.git/commit/?id=cb07844454d8cc9fb21f53ace75975f91185a120"
+            },
+            {
+              "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00077.html"
+            },
+            {
+              "url": "http://savannah.gnu.org/bugs/?55369"
+            },
+            {
+              "url": "https://bugs.launchpad.net/ubuntu/+source/tar/+bug/1810241"
+            }
+          ],
+          "severity": "MEDIUM",
+          "summary": "tar: null-pointer dereference in pax_decode_header in sparse.c",
+          "version": "1.30+dfsg-6"
+        },
+        {
+          "identifiers": {
+            "CVE": "TEMP-0290435-0B57B5"
+          },
+          "name": "tar",
+          "severity": "LOW",
+          "version": "1.30+dfsg-6"
+        }
+      ]
+    }
+  ],
+  "target": "debian:latest (debian 10.3)"
+}
