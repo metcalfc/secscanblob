@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package main;
+
+import "google/protobuf/timestamp.proto";
+
+enum Severity {
+  UNKNOWN = 0;
+  TRIVIAL = 1;
+  LOW = 2;
+  MEDIUM = 3;
+  HIGH = 4;
+  CRITICAL = 5;
+}
+
+enum Scanner {
+  DOCKER = 0;
+  SNYK = 1;
+  TRIVY = 2;
+}
+
+message Reference {
+  string title = 1;
+  string url = 2;
+}
+
+message Vulnerability {
+  string name = 1;    // file, package name, etc
+  string version = 2; // 1.1.1
+  string summary = 3; // aka title, one liner, more info in desc
+  string description = 4;
+
+  // cve = CVE-2011-3374, cwe = CWE-347, cvssScore = 4.3,
+  // CVSSv3 = "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+  map<string, string> identifiers = 5;
+
+  Severity severity = 6;
+
+  repeated Reference references = 7;
+}
+
+message LayerResult {
+
+  // "sha256:f15005b0235fa8bd31cc6988c4f2758016fe412d696e81aecf73e52be079f19e"
+  string sha256 = 1;
+
+  repeated Vulnerability vulnerabilities = 2;
+}
+
+message Scan {
+
+  Scanner backend = 1;
+  string target = 2;
+  google.protobuf.Timestamp created = 3;
+
+  repeated LayerResult layer_results = 4;
+}
