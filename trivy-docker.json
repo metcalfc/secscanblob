@@ -1,6 +1,6 @@
 {
   "backend": "TRIVY",
-  "created": "2020-04-15T05:05:49.642187Z",
+  "created": "2020-04-16T03:25:32.517033Z",
   "layerResults": [
     {
       "sha256": "sha256:f15005b0235fa8bd31cc6988c4f2758016fe412d696e81aecf73e52be079f19e",
@@ -49,7 +49,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "bash: when effective UID is not equal to its real UID the saved UID is not dropped",
+          "title": "bash: when effective UID is not equal to its real UID the saved UID is not dropped",
           "version": "5.0-4"
         },
         {
@@ -75,7 +75,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "coreutils: Non-privileged session can escape to the parent session in chroot",
+          "title": "coreutils: Non-privileged session can escape to the parent session in chroot",
           "version": "8.30-3"
         },
         {
@@ -90,7 +90,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "coreutils: race condition vulnerability in chown and chgrp",
+          "title": "coreutils: race condition vulnerability in chown and chgrp",
           "version": "8.30-3"
         },
         {
@@ -108,7 +108,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
+          "title": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
           "version": "8.3.0-6"
         },
         {
@@ -129,7 +129,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
+          "title": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
           "version": "8.3.0-6"
         },
         {
@@ -153,7 +153,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gnupg2: OpenPGP Key Certification Forgeries with SHA-1",
+          "title": "gnupg2: OpenPGP Key Certification Forgeries with SHA-1",
           "version": "2.2.12-1+deb10u1"
         },
         {
@@ -194,7 +194,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "glibc: stack guard protection bypass",
+          "title": "glibc: stack guard protection bypass",
           "version": "2.28-10"
         },
         {
@@ -204,7 +204,7 @@
           },
           "name": "libc-bin",
           "severity": "HIGH",
-          "summary": "glibc: use-after-free in glob() function when expanding ~user",
+          "title": "glibc: use-after-free in glob() function when expanding ~user",
           "version": "2.28-10"
         },
         {
@@ -219,7 +219,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "glibc: signed comparison vulnerability in the ARMv7 memcpy function",
+          "title": "glibc: signed comparison vulnerability in the ARMv7 memcpy function",
           "version": "2.28-10"
         },
         {
@@ -264,7 +264,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "title": "CVE-2010-4052 glibc: De-recursivise regular expression engine",
           "version": "2.28-10"
         },
         {
@@ -309,7 +309,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "CVE-2010-4051 CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "title": "CVE-2010-4051 CVE-2010-4052 glibc: De-recursivise regular expression engine",
           "version": "2.28-10"
         },
         {
@@ -330,7 +330,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+          "title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
           "version": "2.28-10"
         },
         {
@@ -351,7 +351,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: iconv program can hang when invoked with the -c option",
+          "title": "glibc: iconv program can hang when invoked with the -c option",
           "version": "2.28-10"
         },
         {
@@ -378,7 +378,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "version": "2.28-10"
         },
         {
@@ -399,7 +399,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+          "title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
           "version": "2.28-10"
         },
         {
@@ -420,7 +420,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: ASLR bypass using cache of thread stack and heap",
+          "title": "glibc: ASLR bypass using cache of thread stack and heap",
           "version": "2.28-10"
         },
         {
@@ -435,7 +435,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: information disclosure of heap addresses of pthread_created thread",
+          "title": "glibc: information disclosure of heap addresses of pthread_created thread",
           "version": "2.28-10"
         },
         {
@@ -453,7 +453,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "version": "2.28-10"
         },
         {
@@ -463,7 +463,7 @@
           },
           "name": "libc-bin",
           "severity": "MEDIUM",
-          "summary": "glibc: array overflow in backtrace functions for powerpc",
+          "title": "glibc: array overflow in backtrace functions for powerpc",
           "version": "2.28-10"
         },
         {
@@ -481,7 +481,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "glibc: LD_PREFER_MAP_32BIT_EXEC not ignored in setuid binaries",
+          "title": "glibc: LD_PREFER_MAP_32BIT_EXEC not ignored in setuid binaries",
           "version": "2.28-10"
         },
         {
@@ -508,7 +508,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "glibc: stack corruption from crafted input in cosl, sinl, sincosl, and tanl functions",
+          "title": "glibc: stack corruption from crafted input in cosl, sinl, sincosl, and tanl functions",
           "version": "2.28-10"
         },
         {
@@ -523,7 +523,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "glibc: stack guard protection bypass",
+          "title": "glibc: stack guard protection bypass",
           "version": "2.28-10"
         },
         {
@@ -533,7 +533,7 @@
           },
           "name": "libc6",
           "severity": "HIGH",
-          "summary": "glibc: use-after-free in glob() function when expanding ~user",
+          "title": "glibc: use-after-free in glob() function when expanding ~user",
           "version": "2.28-10"
         },
         {
@@ -548,7 +548,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "glibc: signed comparison vulnerability in the ARMv7 memcpy function",
+          "title": "glibc: signed comparison vulnerability in the ARMv7 memcpy function",
           "version": "2.28-10"
         },
         {
@@ -593,7 +593,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "title": "CVE-2010-4052 glibc: De-recursivise regular expression engine",
           "version": "2.28-10"
         },
         {
@@ -638,7 +638,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "CVE-2010-4051 CVE-2010-4052 glibc: De-recursivise regular expression engine",
+          "title": "CVE-2010-4051 CVE-2010-4052 glibc: De-recursivise regular expression engine",
           "version": "2.28-10"
         },
         {
@@ -659,7 +659,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+          "title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
           "version": "2.28-10"
         },
         {
@@ -680,7 +680,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: iconv program can hang when invoked with the -c option",
+          "title": "glibc: iconv program can hang when invoked with the -c option",
           "version": "2.28-10"
         },
         {
@@ -707,7 +707,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "version": "2.28-10"
         },
         {
@@ -728,7 +728,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+          "title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
           "version": "2.28-10"
         },
         {
@@ -749,7 +749,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: ASLR bypass using cache of thread stack and heap",
+          "title": "glibc: ASLR bypass using cache of thread stack and heap",
           "version": "2.28-10"
         },
         {
@@ -764,7 +764,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: information disclosure of heap addresses of pthread_created thread",
+          "title": "glibc: information disclosure of heap addresses of pthread_created thread",
           "version": "2.28-10"
         },
         {
@@ -782,7 +782,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "version": "2.28-10"
         },
         {
@@ -792,7 +792,7 @@
           },
           "name": "libc6",
           "severity": "MEDIUM",
-          "summary": "glibc: array overflow in backtrace functions for powerpc",
+          "title": "glibc: array overflow in backtrace functions for powerpc",
           "version": "2.28-10"
         },
         {
@@ -810,7 +810,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "glibc: LD_PREFER_MAP_32BIT_EXEC not ignored in setuid binaries",
+          "title": "glibc: LD_PREFER_MAP_32BIT_EXEC not ignored in setuid binaries",
           "version": "2.28-10"
         },
         {
@@ -837,7 +837,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "glibc: stack corruption from crafted input in cosl, sinl, sincosl, and tanl functions",
+          "title": "glibc: stack corruption from crafted input in cosl, sinl, sincosl, and tanl functions",
           "version": "2.28-10"
         },
         {
@@ -855,7 +855,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
+          "title": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
           "version": "8.3.0-6"
         },
         {
@@ -876,7 +876,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
+          "title": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
           "version": "8.3.0-6"
         },
         {
@@ -900,7 +900,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "libgcrypt: ElGamal implementation doesn't have semantic security due to incorrectly encoded plaintexts possibly allowing to obtain sensitive information",
+          "title": "libgcrypt: ElGamal implementation doesn't have semantic security due to incorrectly encoded plaintexts possibly allowing to obtain sensitive information",
           "version": "1.8.4-5"
         },
         {
@@ -927,7 +927,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "Libgcrypt: physical addresses being available to other processes leads to a flush-and-reload side-channel attack",
+          "title": "Libgcrypt: physical addresses being available to other processes leads to a flush-and-reload side-channel attack",
           "version": "1.8.4-5"
         },
         {
@@ -981,7 +981,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "libgcrypt: ECDSA timing attack in the libgcrypt20 cryptographic library",
+          "title": "libgcrypt: ECDSA timing attack in the libgcrypt20 cryptographic library",
           "version": "1.8.4-5"
         },
         {
@@ -1263,7 +1263,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "HTTPS: block-wise chosen-plaintext attack against SSL/TLS (BEAST)",
+          "title": "HTTPS: block-wise chosen-plaintext attack against SSL/TLS (BEAST)",
           "version": "3.6.7-4+deb10u2"
         },
         {
@@ -1293,7 +1293,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gnutls: DTLS client hello contains a random value of all zeroes",
+          "title": "gnutls: DTLS client hello contains a random value of all zeroes",
           "version": "3.6.7-4+deb10u2"
         },
         {
@@ -1364,7 +1364,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "lz4: heap-based buffer overflow in LZ4_write32",
+          "title": "lz4: heap-based buffer overflow in LZ4_write32",
           "version": "1.8.3-1"
         },
         {
@@ -1382,7 +1382,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "pcre: OP_KETRMAX feature in the match function in pcre_exec.c",
+          "title": "pcre: OP_KETRMAX feature in the match function in pcre_exec.c",
           "version": "2:8.39-12"
         },
         {
@@ -1406,7 +1406,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "pcre: stack-based buffer overflow write in pcre32_copy_substring",
+          "title": "pcre: stack-based buffer overflow write in pcre32_copy_substring",
           "version": "2:8.39-12"
         },
         {
@@ -1430,7 +1430,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "pcre: stack-based buffer overflow write in pcre32_copy_substring",
+          "title": "pcre: stack-based buffer overflow write in pcre32_copy_substring",
           "version": "2:8.39-12"
         },
         {
@@ -1466,7 +1466,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "pcre: self-recursive call in match() in pcre_exec.c leads to denial of service",
+          "title": "pcre: self-recursive call in match() in pcre_exec.c leads to denial of service",
           "version": "2:8.39-12"
         },
         {
@@ -1499,7 +1499,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "libseccomp: incorrect generation of syscall filters in libseccomp",
+          "title": "libseccomp: incorrect generation of syscall filters in libseccomp",
           "version": "2.3.3-4"
         },
         {
@@ -1517,7 +1517,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
+          "title": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
           "version": "8.3.0-6"
         },
         {
@@ -1538,7 +1538,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
+          "title": "gcc: POWER9 \"DARN\" RNG intrinsic produces repeated output",
           "version": "8.3.0-6"
         },
         {
@@ -1562,7 +1562,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "systemd: services with DynamicUser can create SUID/SGID binaries",
+          "title": "systemd: services with DynamicUser can create SUID/SGID binaries",
           "version": "241-7~deb10u3"
         },
         {
@@ -1583,7 +1583,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
+          "title": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
           "version": "241-7~deb10u3"
         },
         {
@@ -1619,7 +1619,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "systemd: use-after-free when asynchronous polkit queries are performed",
+          "title": "systemd: use-after-free when asynchronous polkit queries are performed",
           "version": "241-7~deb10u3"
         },
         {
@@ -1640,7 +1640,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+          "title": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
           "version": "241-7~deb10u3"
         },
         {
@@ -1664,7 +1664,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "systemd: a memory leak was discovered in button_open in login/logind-button.c when udev events are received",
+          "title": "systemd: a memory leak was discovered in button_open in login/logind-button.c when udev events are received",
           "version": "241-7~deb10u3"
         },
         {
@@ -1688,7 +1688,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "libtasn1: Infinite loop in _asn1_expand_object_id(ptree) leads to memory exhaustion",
+          "title": "libtasn1: Infinite loop in _asn1_expand_object_id(ptree) leads to memory exhaustion",
           "version": "4.13-3"
         },
         {
@@ -1712,7 +1712,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "systemd: services with DynamicUser can create SUID/SGID binaries",
+          "title": "systemd: services with DynamicUser can create SUID/SGID binaries",
           "version": "241-7~deb10u3"
         },
         {
@@ -1733,7 +1733,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
+          "title": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
           "version": "241-7~deb10u3"
         },
         {
@@ -1769,7 +1769,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "systemd: use-after-free when asynchronous polkit queries are performed",
+          "title": "systemd: use-after-free when asynchronous polkit queries are performed",
           "version": "241-7~deb10u3"
         },
         {
@@ -1790,7 +1790,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+          "title": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
           "version": "241-7~deb10u3"
         },
         {
@@ -1814,7 +1814,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "systemd: a memory leak was discovered in button_open in login/logind-button.c when udev events are received",
+          "title": "systemd: a memory leak was discovered in button_open in login/logind-button.c when udev events are received",
           "version": "241-7~deb10u3"
         },
         {
@@ -1832,7 +1832,7 @@
             }
           ],
           "severity": "HIGH",
-          "summary": "iptables: --syn flag bypass",
+          "title": "iptables: --syn flag bypass",
           "version": "1.8.2-4"
         },
         {
@@ -1896,7 +1896,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
+          "title": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
           "version": "1:4.5-1.1"
         },
         {
@@ -1923,7 +1923,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "shadow-utils: local users can obtain root access because setuid programs are misconfigured",
+          "title": "shadow-utils: local users can obtain root access because setuid programs are misconfigured",
           "version": "1:4.5-1.1"
         },
         {
@@ -1944,7 +1944,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "shadow-utils: TOCTOU race conditions by copying and removing directory trees",
+          "title": "shadow-utils: TOCTOU race conditions by copying and removing directory trees",
           "version": "1:4.5-1.1"
         },
         {
@@ -1999,7 +1999,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
+          "title": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
           "version": "1:4.5-1.1"
         },
         {
@@ -2026,7 +2026,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "shadow-utils: local users can obtain root access because setuid programs are misconfigured",
+          "title": "shadow-utils: local users can obtain root access because setuid programs are misconfigured",
           "version": "1:4.5-1.1"
         },
         {
@@ -2047,7 +2047,7 @@
             }
           ],
           "severity": "LOW",
-          "summary": "shadow-utils: TOCTOU race conditions by copying and removing directory trees",
+          "title": "shadow-utils: TOCTOU race conditions by copying and removing directory trees",
           "version": "1:4.5-1.1"
         },
         {
@@ -2082,7 +2082,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "perl: File::Temp insecure temporary file handling",
+          "title": "perl: File::Temp insecure temporary file handling",
           "version": "5.28.1-6"
         },
         {
@@ -2128,7 +2128,7 @@
             }
           ],
           "severity": "MEDIUM",
-          "summary": "tar: null-pointer dereference in pax_decode_header in sparse.c",
+          "title": "tar: null-pointer dereference in pax_decode_header in sparse.c",
           "version": "1.30+dfsg-6"
         },
         {

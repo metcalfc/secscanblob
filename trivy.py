@@ -39,7 +39,7 @@ for layer in layers:
             if "Description" in vuln:
                 v.description = vuln["Description"]
             if "Title" in vuln:
-                v.summary = vuln["Title"]
+                v.title = vuln["Title"]
             v.version = vuln["InstalledVersion"]
             v.severity = Severity.Value(vuln["Severity"])
             if "References" in vuln:

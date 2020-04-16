@@ -25,7 +25,7 @@ with open(args.file) as f:
 for vuln in data["vulnerabilities"]:
     v = layer.vulnerabilities.add()
     v.name = vuln["name"]
-    v.summary = vuln["title"]
+    v.title = vuln["title"]
     v.description = vuln["description"]
     v.version = vuln["version"]
     v.severity = Severity.Value(vuln["severity"].upper())

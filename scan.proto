@@ -5,8 +5,10 @@ package main;
 import "google/protobuf/timestamp.proto";
 
 enum Severity {
+  option allow_alias = true;
   UNKNOWN = 0;
   TRIVIAL = 1;
+  NEGLIGIBLE = 1;
   LOW = 2;
   MEDIUM = 3;
   HIGH = 4;
@@ -27,7 +29,7 @@ message Reference {
 message Vulnerability {
   string name = 1;    // file, package name, etc
   string version = 2; // 1.1.1
-  string summary = 3; // aka title, one liner, more info in desc
+  string title = 3; // aka title, one liner, more info in desc
   string description = 4;
 
   // cve = CVE-2011-3374, cwe = CWE-347, cvssScore = 4.3,

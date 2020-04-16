@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='main',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\nscan.proto\x12\x04main\x1a\x1fgoogle/protobuf/timestamp.proto\"\'\n\tReference\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\"\x8a\x02\n\rVulnerability\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0f\n\x07summary\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x39\n\x0bidentifiers\x18\x05 \x03(\x0b\x32$.main.Vulnerability.IdentifiersEntry\x12 \n\x08severity\x18\x06 \x01(\x0e\x32\x0e.main.Severity\x12#\n\nreferences\x18\x07 \x03(\x0b\x32\x0f.main.Reference\x1a\x32\n\x10IdentifiersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"K\n\x0bLayerResult\x12\x0e\n\x06sha256\x18\x01 \x01(\t\x12,\n\x0fvulnerabilities\x18\x02 \x03(\x0b\x32\x13.main.Vulnerability\"\x8d\x01\n\x04Scan\x12\x1e\n\x07\x62\x61\x63kend\x18\x01 \x01(\x0e\x32\r.main.Scanner\x12\x0e\n\x06target\x18\x02 \x01(\t\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12(\n\rlayer_results\x18\x04 \x03(\x0b\x32\x11.main.LayerResult*Q\n\x08Severity\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07TRIVIAL\x10\x01\x12\x07\n\x03LOW\x10\x02\x12\n\n\x06MEDIUM\x10\x03\x12\x08\n\x04HIGH\x10\x04\x12\x0c\n\x08\x43RITICAL\x10\x05**\n\x07Scanner\x12\n\n\x06\x44OCKER\x10\x00\x12\x08\n\x04SNYK\x10\x01\x12\t\n\x05TRIVY\x10\x02\x62\x06proto3'
+  serialized_pb=b'\n\nscan.proto\x12\x04main\x1a\x1fgoogle/protobuf/timestamp.proto\"\'\n\tReference\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\"\x88\x02\n\rVulnerability\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x39\n\x0bidentifiers\x18\x05 \x03(\x0b\x32$.main.Vulnerability.IdentifiersEntry\x12 \n\x08severity\x18\x06 \x01(\x0e\x32\x0e.main.Severity\x12#\n\nreferences\x18\x07 \x03(\x0b\x32\x0f.main.Reference\x1a\x32\n\x10IdentifiersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"K\n\x0bLayerResult\x12\x0e\n\x06sha256\x18\x01 \x01(\t\x12,\n\x0fvulnerabilities\x18\x02 \x03(\x0b\x32\x13.main.Vulnerability\"\x8d\x01\n\x04Scan\x12\x1e\n\x07\x62\x61\x63kend\x18\x01 \x01(\x0e\x32\r.main.Scanner\x12\x0e\n\x06target\x18\x02 \x01(\t\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12(\n\rlayer_results\x18\x04 \x03(\x0b\x32\x11.main.LayerResult*e\n\x08Severity\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07TRIVIAL\x10\x01\x12\x0e\n\nNEGLIGIBLE\x10\x01\x12\x07\n\x03LOW\x10\x02\x12\n\n\x06MEDIUM\x10\x03\x12\x08\n\x04HIGH\x10\x04\x12\x0c\n\x08\x43RITICAL\x10\x05\x1a\x02\x10\x01**\n\x07Scanner\x12\n\n\x06\x44OCKER\x10\x00\x12\x08\n\x04SNYK\x10\x01\x12\t\n\x05TRIVY\x10\x02\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -39,26 +39,30 @@ _SEVERITY = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='LOW', index=2, number=2,
+      name='NEGLIGIBLE', index=2, number=1,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='MEDIUM', index=3, number=3,
+      name='LOW', index=3, number=2,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='HIGH', index=4, number=4,
+      name='MEDIUM', index=4, number=3,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CRITICAL', index=5, number=5,
+      name='HIGH', index=5, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CRITICAL', index=6, number=5,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  serialized_options=None,
-  serialized_start=584,
-  serialized_end=665,
+  serialized_options=b'\020\001',
+  serialized_start=582,
+  serialized_end=683,
 )
 _sym_db.RegisterEnumDescriptor(_SEVERITY)
 
@@ -84,14 +88,15 @@ _SCANNER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=667,
-  serialized_end=709,
+  serialized_start=685,
+  serialized_end=727,
 )
 _sym_db.RegisterEnumDescriptor(_SCANNER)
 
 Scanner = enum_type_wrapper.EnumTypeWrapper(_SCANNER)
 UNKNOWN = 0
 TRIVIAL = 1
+NEGLIGIBLE = 1
 LOW = 2
 MEDIUM = 3
 HIGH = 4
@@ -173,8 +178,8 @@ _VULNERABILITY_IDENTIFIERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=311,
-  serialized_end=361,
+  serialized_start=309,
+  serialized_end=359,
 )
 
 _VULNERABILITY = _descriptor.Descriptor(
@@ -199,7 +204,7 @@ _VULNERABILITY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='summary', full_name='main.Vulnerability.summary', index=2,
+      name='title', full_name='main.Vulnerability.title', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -246,7 +251,7 @@ _VULNERABILITY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=95,
-  serialized_end=361,
+  serialized_end=359,
 )
 
 
@@ -283,8 +288,8 @@ _LAYERRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=363,
-  serialized_end=438,
+  serialized_start=361,
+  serialized_end=436,
 )
 
 
@@ -335,8 +340,8 @@ _SCAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=441,
-  serialized_end=582,
+  serialized_start=439,
+  serialized_end=580,
 )
 
 _VULNERABILITY_IDENTIFIERSENTRY.containing_type = _VULNERABILITY
@@ -392,5 +397,6 @@ Scan = _reflection.GeneratedProtocolMessageType('Scan', (_message.Message,), {
 _sym_db.RegisterMessage(Scan)
 
 
+_SEVERITY._options = None
 _VULNERABILITY_IDENTIFIERSENTRY._options = None
 # @@protoc_insertion_point(module_scope)
